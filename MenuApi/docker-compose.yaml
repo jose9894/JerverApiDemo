@@ -1,0 +1,10 @@
+services:
+  webapi:
+    image: jose9894/webapi:latest   
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Staging"
+      ASPNETCORE_URLS: "http://+:8080"
+
+
