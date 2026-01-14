@@ -28,4 +28,10 @@ jobs:
 
       - name: Build docker image
         working-directory: ./MenuApi
-        run: docker build -t jose9894/webapi:latest   
+        run: docker build -t jose9894/webapi:latest .
+
+      - name: Push image to docker hub
+        working-directory: ./MenuApi
+        run: |
+          docker login -u jose9894 -p ${{secrets.DOCKER_ACCESS_TOKEN}}
+          docker push jose9894/webapi:latest     
