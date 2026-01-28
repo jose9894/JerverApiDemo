@@ -1,0 +1,38 @@
+name: CI/CD - pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.x'
+
+      - name: Restore dependencies
+        run: dotnet restore 
+
+      # måske include build og test senere
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: jose9894
+          password: ${{secrets.DOCKER_ACCESS_TOKEN}}
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          tags: jose9894/webapi:latest
+          
+        
