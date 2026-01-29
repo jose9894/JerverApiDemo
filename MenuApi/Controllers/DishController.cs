@@ -20,7 +20,7 @@ namespace MenuApi.Controllers
             return new List<Dish>
             {
                 new Dish { Name = "Group 1 (Joseph)", Price = 120000 },
-                new Dish { Name = "Caesar Salad", Price = 90 },
+                new Dish { Name = "Large Caesar Salad", Price = 90 },
                 new Dish { Name = "Margherita Pizza", Price = 100 }
             };
         }
