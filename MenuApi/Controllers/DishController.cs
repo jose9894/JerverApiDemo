@@ -21,7 +21,8 @@ namespace MenuApi.Controllers
             {
                 new Dish { Name = "Group 1 (Joseph)", Price = 120000 },
                 new Dish { Name = "Large Caesar Salad", Price = 90 },
-                new Dish { Name = "Margherita Pizza", Price = 100 }
+                new Dish { Name = "Margherita Pizza", Price = 100 },
+                new Dish { Name = "Tiki masala", Price = 25}
             };
         }
     }
